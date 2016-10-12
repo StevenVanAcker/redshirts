@@ -1,0 +1,21 @@
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "ubuntu/wily64"
+  config.vm.provider "virtualbox" do |vb|
+     vb.cpus = 2
+     vb.customize ["modifyvm", :id, "--memory", "1024"]
+  end
+
+  config.vm.provider :digital_ocean do |provider, override|
+     provider.image = "ubuntu-15-10-x64"
+  end
+
+  config.vm.provider :aws do |aws, override|
+     # aws.instance_type = "t2.medium"
+  end
+
+  config.vm.provision :ansible do |ansible|
+    ansible.playbook = "provision.yaml"
+  end
+end
