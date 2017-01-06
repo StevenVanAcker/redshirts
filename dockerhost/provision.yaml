@@ -14,4 +14,4 @@
     - generic
     - dockerhost
     - role: awstools
-      credentialsfile: /Users/deepstar/.aws/credentials.default
+      credentialsfile: /Users/deepstar/.aws/credentials.ecsecrfull
