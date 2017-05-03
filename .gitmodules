@@ -1,3 +1,15 @@
 [submodule "dockerhost/roles"]
 	path = dockerhost/roles
 	url = https://github.com/StevenVanAcker/ansible-roles
+[submodule "generic/roles"]
+	path = generic/roles
+	url = https://github.com/StevenVanAcker/ansible-roles
+[submodule "ctfmachine/ansible-roles"]
+	path = ctfmachine/roles
+	url = https://github.com/StevenVanAcker/ansible-roles
+[submodule "otw-base/roles"]
+	path = otw-base/roles
+	url = https://github.com/StevenVanAcker/ansible-roles
+[submodule "hashcat/roles"]
+	path = hashcat/roles
+	url = https://github.com/StevenVanAcker/ansible-roles
