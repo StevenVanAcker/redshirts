@@ -13,3 +13,21 @@
 [submodule "hashcat/roles"]
 	path = hashcat/roles
 	url = https://github.com/StevenVanAcker/ansible-roles
+[submodule "swarmnode/ansible-roles"]
+	path = swarm-slave/roles
+	url = https://github.com/StevenVanAcker/ansible-roles
+[submodule "lanparty/roles"]
+	path = lanparty/roles
+	url = https://github.com/StevenVanAcker/ansible-roles
+[submodule "vpnserver/roles"]
+	path = vpnserver/roles
+	url = https://github.com/StevenVanAcker/ansible-roles
+[submodule "chloe/roles"]
+	path = chloe/roles
+	url = https://github.com/StevenVanAcker/ansible-roles
+[submodule "swarm-master/roles"]
+	path = swarm-master/roles
+	url = https://github.com/StevenVanAcker/ansible-roles
+[submodule "awstools/roles"]
+	path = awstools/roles
+	url = https://github.com/StevenVanAcker/ansible-roles
