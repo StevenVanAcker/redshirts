@@ -1,0 +1,42 @@
+#!/bin/bash
+
+OPTS=""
+dockerimage=my-ctf-tools
+cmd=""
+
+while (( "$#" )); do
+    opt=$1
+    shift
+
+    case $opt in
+        x)
+	    echo "[+] Enabling X forwarding"
+	    OPTS="$OPTS --net=host --env=DISPLAY --volume=$HOME/.Xauthority:/home/ctf/.Xauthority:rw"
+	    ;;
+        *trace)
+	    echo "[+] Enabling strace/ltrace/ptrace/..."
+	    OPTS="$OPTS --security-opt=seccomp:unconfined"
+	    ;;
+        vagrant)
+	    echo "[+] Enabling /vagrant mount"
+	    OPTS="$OPTS -v /vagrant:/vagrant"
+	    ;;
+        cwd)
+	    echo "[+] Enabling current directoy mount in /data"
+	    OPTS="$OPTS -v $PWD:/data"
+	    ;;
+	--)
+	    echo "[+] Executing command '$@'"
+	    OPTS="$OPTS \"$@\""
+	    break
+	    ;;
+    esac
+done
+
+if [ "$cmd" = "" ];
+then
+    docker run $OPTS -ti $dockerimage
+else
+    docker run $OPTS -ti $dockerimage $cmd
+fi
+

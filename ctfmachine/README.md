@@ -1,1 +1,1 @@
-A machine for playing CTF, with CTF tools installed in a docker container
+My CTF tools container and launcher
