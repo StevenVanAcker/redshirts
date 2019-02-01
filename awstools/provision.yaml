@@ -1,0 +1,16 @@
+---
+- hosts: all
+  sudo: true
+  gather_facts: no
+
+
+  pre_tasks:
+    - name: install python if it is not there already
+      raw: apt-get update && apt-get -y install python
+    - name: Gathering facts
+      setup:
+
+  roles:
+    - generic
+    - role: awstools
+      credentialsfile: /Users/deepstar/.aws/credentials.default
