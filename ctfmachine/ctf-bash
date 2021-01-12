@@ -25,6 +25,10 @@ while (( "$#" )); do
 	    echo "[+] Enabling current directoy mount in /data"
 	    OPTS="$OPTS -v $PWD:/data"
 	    ;;
+        host)
+	    echo "[+] Enabling network 'host'"
+	    OPTS="$OPTS --net host"
+	    ;;
 	--)
 	    echo "[+] Executing command '$@'"
 	    OPTS="$OPTS \"$@\""
